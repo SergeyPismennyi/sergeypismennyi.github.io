@@ -446,28 +446,28 @@ header {
   font-family: OpenSans;
   font-style: normal;
   font-weight: normal;
-  src: url(./resources/fonts/OpenSans-Regular.ttf);
+  src: url(/resources/fonts/OpenSans-Regular.ttf);
 }
 
 @font-face {
   font-family: OpenSans;
   font-style: normal;
   font-weight: bold;
-  src: url(./resources/fonts/OpenSans-Bold.ttf);
+  src: url(/resources/fonts/OpenSans-Bold.ttf);
 }
 
 @font-face {
   font-family: OpenSans;
   font-style: italic;
   font-weight: normal;
-  src: url(./resources/fonts/OpenSans-Italic.ttf);
+  src: url(/resources/fonts/OpenSans-Italic.ttf);
 }
 
 @font-face {
   font-family: OpenSans;
   font-style: italic;
   font-weight: bold;
-  src: url(./resources/fonts/OpenSans-BoldItalic.ttf);
+  src: url(/resources/fonts/OpenSans-BoldItalic.ttf);
 }
 .pagination {
   width: 350px;
