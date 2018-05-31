@@ -1,0 +1,712 @@
+.animation {
+  position: relative;
+  min-height: inherit;
+  height: 100%;
+  min-width: inherit;
+  overflow: hidden;
+}
+
+.animation-container {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: wrap linear infinite 50s;
+  font-size: 100px;
+}
+
+.circle {
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.5em;
+  height: 0.5em;
+  transform: translate(-50%, -50%);
+  background-color: #61DAFB;
+  border-radius: 50%;
+}
+
+.elips1,
+.elips2,
+.elips3 {
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+}
+
+.elips1 {
+  transform: translate(-50%, -50%) rotate3d(1, 0, 0, 70deg);
+  border-bottom: 0.2em solid #61DAFB;
+  animation: elips1 linear infinite 4s;
+}
+
+.elips2 {
+  transform: translate(-50%, -50%) rotate3d(1, 1.5, 0, 70deg);
+  border-top: 0.2em solid #61DAFB;
+  animation: elips2 linear infinite 3s;
+}
+
+.elips3 {
+  transform: translate(-50%, -50%) rotate3d(-1, 1.5, 0, 70deg);
+  border-bottom: 0.2em solid #61DAFB;
+  animation: elips3 linear infinite 2.5s;
+}
+
+
+@keyframes elips1 {
+  0% {transform: translate(-50%, -50%) rotate3d(1, 0, 0, 70deg) rotate(0deg);}
+  100% {transform: translate(-50%, -50%) rotate3d(1, 0, 0, 70deg) rotate(360deg);}
+}
+
+@keyframes elips2 {
+  0% {transform: translate(-50%, -50%) rotate3d(1, 1.5, 0, 70deg) rotate(-360deg);}
+  100% {transform: translate(-50%, -50%) rotate3d(1, 1.5, 0, 70deg) rotate(0deg);}
+}
+
+@keyframes elips3 {
+  0% {transform: translate(-50%, -50%) rotate3d(-1, 1.5, 0, 70deg) rotate(270deg);}
+  100% {transform: translate(-50%, -50%) rotate3d(-1, 1.5, 0, 70deg) rotate(-90deg);}
+}
+
+@keyframes wrap {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg);}
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: #F5F5F5;
+}
+
+#root {
+  height: 100%;
+}
+
+.content-wrapper {
+  min-height: calc(100vh - 140px - 45px);
+  width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 70px;
+  min-width: 1000px;
+  background-color: #222;
+}
+
+.header-wrapper {
+  width: 1000px;
+  box-sizing: border-box;
+  padding: 20px 0px;
+  margin: auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.title {
+  height: 30px;
+  width: 100px;
+  display: inline-block;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.title img {
+  height: 30px;
+  width: 30px;
+}
+
+.navigation-wrapper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: top;
+}
+
+.navigation-wrapper .nav-item {
+  position: relative;
+  vertical-align: top;
+  display: inline-block;
+  margin: 0 30px 0 0;
+  user-select: none;
+}
+
+.navigation-wrapper .nav-item a {
+  text-decoration: none;
+  font: bold 20px OpenSans;
+  color: #fff;
+}
+
+.navigation-wrapper .nav-item:hover {
+  cursor: pointer;
+}
+
+.navigation-wrapper .nav-item:hover > a,
+.navigation-wrapper .nav-item.nav-list:hover > p {
+  color: #60D8F9;
+}
+
+.navigation-wrapper .nav-item.nav-list p {
+  font: bold 20px OpenSans;
+  color: #fff;
+}
+
+.navigation-wrapper .nav-item.nav-list ul {
+  position: absolute;
+  top: 28px;
+  left: 20px;
+  display: none;
+}
+
+.navigation-wrapper .nav-item.nav-list ul li {
+  margin: 0 10px 0 0;
+  display: inline-block;
+}
+
+.navigation-wrapper .nav-item.nav-list ul li:hover > a {
+  color: #60D8F9;
+}
+
+.navigation-wrapper .nav-item.nav-list ul li a {
+  text-decoration: none;
+  font: bold 12px OpenSans;
+  color: #fff;
+}
+
+.navigation-wrapper .nav-item.nav-list:hover > ul {
+  display: inline-block;
+}
+.search-tab-wrapper {
+  position: sticky;
+  top: 70px;
+  z-index: 10;
+  min-width: 1000px;
+  height: 45px;
+  box-sizing: border-box;
+  box-shadow: 1px 0px 1px grey;
+  background-color: #fff;
+}
+
+.search-tab {
+  height: 100%;
+  width: 1000px;
+  margin: auto;
+}
+
+.search-tab .search-img {
+  display: inline-block;
+  overflow: hidden;
+  margin-top: 12px;
+  height: 20px;
+  width: 20px;
+}
+
+.search-tab .search-img img {
+  height: 20px;
+  width: 20px;
+}
+
+.search-tab input {
+  vertical-align: top;
+  box-sizing: border-box;
+  height: 30px;
+  width: 960px;
+  margin: 7px 10px 5px 7px;
+  padding: 0 10px;
+  outline: none;
+  border: 0px solid #61DAFB;
+  font: normal 20px OpenSans;
+}
+
+.search-options-wrapper {
+  position: absolute;
+  display: none;
+  min-width: 100%;
+  left: 0px;
+  top: 45px;
+  z-index: 10;
+}
+
+.search-option-wrapper {
+  min-width: 1000px;
+  background-color: #fff;
+  box-shadow: 1px 0px 1px grey;
+}
+
+.search-options-wrapper .search-option {
+  box-sizing: border-box;
+  width: 1000px;
+  height: 30px;
+  padding: 5px 0px 0px 57px;
+  margin: auto;
+}
+
+.search-options-wrapper .search-option a {
+  text-align: center;
+  font: normal 15px OpenSans;
+  color: #000;
+  text-decoration: none;
+}
+
+.search-options-wrapper .no-results {
+  box-sizing: border-box;
+  width: 1000px;
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+  padding: 20px 0;
+  font: normal 40px OpenSans;
+}
+
+.search-option-wrapper:hover {
+  background-color: #efefef;
+}
+.rating-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px 0 0;
+  width: 40px;
+  height: 40px;
+  background-color: #222;
+  border-radius: 50%;
+}
+
+.rating-wrapper .rating {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.rating-wrapper .rating p {
+  text-align: center;
+  font: bold 14px OpenSans;
+  color: #fff;
+}
+.film-item {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 480px;
+  height: 280px;
+  margin: 20px 10px 0 10px;
+  overflow: hidden;
+  vertical-align: top;
+  background-color: #fff;
+  font-size: 0px;
+  box-shadow: 3px 3px 1px grey;
+}
+
+.film-item:hover {
+  transform: scale(1.015);
+  box-shadow: 5px 5px 2px grey;
+}
+
+.film-item .poster-container {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 280px;
+  width: 200px;
+  padding: 0 10px 0 0;
+  overflow: hidden;
+}
+
+.film-item .poster-container img {
+  max-width: 187px;
+  min-height: 280px;
+}
+
+.film-item .film-description {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 270px;
+  height: 220px;
+  vertical-align: top;
+  padding: 10px 0px 0 0;
+  margin: 0 10px 0 0;
+}
+
+.film-item .film-description .film-title {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 220px;
+  height: 80px;
+  vertical-align: top;
+}
+
+.film-item .film-description .film-title p {
+  font: bold 17px OpenSans;
+  margin: 0 0 0 0;
+  color: #000;
+}
+
+.film-item .film-description .film-title p:last-child {
+  font: normal 14px OpenSans;
+  color: #878787;
+}
+
+.film-item .film-description .film-overview {
+  width: 270px;
+  height: 130px;
+  overflow: hidden;
+  border-bottom: 1px solid #999999;
+}
+
+.film-item .film-description .film-overview p {
+  font: normal 14px OpenSans;
+  color: #000;
+}
+
+.film-item .film-description .show-more {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 200px;
+  height: 50px;
+  padding: 20px 10px;
+}
+
+.film-item .film-description .show-more a {
+  text-decoration: none;
+  color: #000;
+  font: normal 14px OpenSans;
+  font-style: italic;
+}
+
+.film-item .film-description .like {
+  box-sizing: border-box;
+  float: right;
+  width: 50px;
+  height: 50px;
+  padding: 20px 10px 15px 20px;
+  vertical-align: top;
+}
+
+.film-item .film-description .like img:hover {
+  cursor: pointer;
+  transform: scale(1.2)
+}
+@font-face {
+  font-family: OpenSans;
+  font-style: normal;
+  font-weight: normal;
+  src: url(resources/fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-style: normal;
+  font-weight: bold;
+  src: url(resources/fonts/OpenSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-style: italic;
+  font-weight: normal;
+  src: url(resources/fonts/OpenSans-Italic.ttf);
+}
+
+@font-face {
+  font-family: OpenSans;
+  font-style: italic;
+  font-weight: bold;
+  src: url(resources/fonts/OpenSans-BoldItalic.ttf);
+}
+.pagination {
+  width: 350px;
+  margin: 30px auto 0 auto;
+  text-align: center;
+}
+
+.pagination-item {
+  display: inline-block;
+  margin: 0 5px;
+  font-size: 20px;
+}
+
+.pagination-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.pagination-item.current-page {
+  font-weight: bold;
+}
+main {
+  box-sizing: border-box;
+  width: 1000px;
+  margin: auto;
+  padding: 0 0 20px 0;
+}
+.about-wrapper {
+  width: 100%;
+  z-index: 2;
+}
+
+.custom-background {
+  position: relative;
+  width: 100%;
+  height: 582px;
+  overflow: hidden;
+}
+
+.about-content {
+  box-sizing: border-box;
+  width: 1000px;
+  margin: auto;
+}
+
+.common-info {
+  padding: 50px 0;
+}
+
+.about-content.common-info {
+  height: 100%;
+}
+
+.poster-wrapper {
+  display: inline-block;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 360px;
+  height: 100%;
+  padding: 0 38px 0 0;
+}
+
+.poster-wrapper img {
+  width: 322px;
+}
+
+.description-wrapper {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 640px;
+  height: 400px;
+  vertical-align: top;
+}
+
+.title-wrapper {
+  height: 70px;
+  overflow: hidden;
+  margin: 0 0 18px 0;
+}
+
+.title-wrapper h2 {
+  font: bold 28px OpenSans;
+  color: #fff;
+}
+
+.title-wrapper p {
+  font: normal 14px OpenSans;
+  font-style: italic;
+  color: #fff;
+}
+
+.overview {
+  margin: 0 0 20px 0;
+  padding: 0 10px 0 0;
+}
+
+.overview p {
+  font: normal 14px OpenSans;
+  color: #fff;
+}
+
+.budget,
+.genres,
+.runtime {
+  margin: 0 0 10px 0;
+}
+
+.budget p,
+.genres p,
+.runtime p {
+  font: normal 14px OpenSans;
+  color: #fff;
+}
+
+.about-content.cast {
+  box-sizing: border-box;
+  padding: 20px 0 10px 0;
+  overflow: hidden;
+}
+
+.about-content.cast h2 {
+  font: bold 30px OpenSans;
+}
+
+.actors-item {
+  display: inline-block;
+  width: 120px;
+  height: 250px;
+  margin: 20px 40px 20px 0px;
+  overflow: hidden;
+  box-shadow: 3px 3px 1px grey;
+  background-color: #fff;
+}
+
+.actors-item .poster {
+  width: 120px;
+  height: 180px;
+  overflow: hidden;
+}
+
+.actors-item .poster img {
+  width: 120px;
+  height: 180px;
+}
+
+.actors-item .name {
+  font: bold 12px OpenSans;
+  text-align: center;
+}
+
+.actors-item .role {
+  font: normal 12px OpenSans;
+  text-align: center;
+}
+
+.trailer-wrapper {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 3px 3px 1px grey;
+}
+
+.trailer-header {
+  box-sizing: border-box;
+  width: 1000px;
+  margin: 0 auto 0 auto;
+}
+
+.trailer-header p {
+  font: bold 30px OpenSans;
+  display: inline-block;
+}
+
+.trailer-header .chevron {
+  box-sizing: border-box;
+  float: right;
+  height: 40px;
+  padding: 5px;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.trailer-header .chevron img {
+  height: 30px;
+}
+
+.invert {
+  transform: rotate(180deg);
+}
+
+.trailer {
+  width: 1000px;
+  height: 0px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.trailer iframe {
+  display: block;
+  box-sizing: border-box;
+  width: 1000px;
+  height: 100%;
+}
+
+.trailer-animated {
+  transition: height 1s;
+}
+.content-wrapper .search-wrapper {
+  box-sizing: border-box;
+  width: 1000px;
+  padding: 20px 0;
+  margin: auto;
+}
+.favorites-wrapper {
+  width: 100%;
+}
+
+.favorites-content {
+  width: 1000px;
+  margin: 10px auto 20px auto;
+}
+footer {
+  height: 70px;
+  background-color: #222;
+}
+
+.footer-wrapper {
+  box-sizing: border-box;
+  max-width: 1200px;
+  height: inherit;
+  padding: 0 100px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.logo-wrapper {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  margin: 5px 0 0 0;
+  overflow: hidden;
+}
