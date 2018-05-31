@@ -1,1 +1,0 @@
-# sergeypismennyi.github.io
